@@ -1,0 +1,81 @@
+body {
+  background-color: rgba(245, 175, 120, 0.8);
+}
+
+/*children will have perspective*/
+.perspective-container {
+  perspective: 1000px;
+  /*center the element*/
+  transform: translate(-50%, -50%);
+  top: 50%;
+  position: absolute;
+  left: 50%;
+}
+
+/* flip the element when hovered */
+.perspective-container:hover .flip,
+.perspective-container.hover .flip {
+  transform: rotateY(180deg);
+}
+
+/* flip animation settings goes here */
+.flip {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+.perspective-container,
+.front,
+.back {
+  width: 400px;
+  height: 600px;
+}
+
+.front,
+.back {
+  backface-visibility: hidden; /*backface of an element is hidden*/
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front element*/
+.front {
+  z-index: 2;
+  position: relative;
+}
+
+/* back element */
+.back {
+  transform: rotateY(180deg);
+  border-radius: 8px;
+  background-color: #5b52fb;
+}
+
+.image {
+  height: inherit;
+  width: inherit;
+  border-radius: 16px;
+}
+
+.title {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 64px;
+  color: orange;
+  font-weight: 500;
+}
+
+.text {
+  margin: 12px;
+  color: black;
+  background-color: white;
+  border-radius: 8px;
+  position: absolute;
+  top: 16px;
+  font-size: 32px;
+  margin-top: 16px;
+}

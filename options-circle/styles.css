@@ -1,0 +1,82 @@
+body {
+  background-color: #858585;
+}
+
+.parent {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.child {
+  background-color: #525252;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.child:hover {
+  background-color: #151515;
+}
+
+input {
+  display: none;
+}
+
+#primary:checked + .child {
+  background-color: #da3b3b;
+}
+#primary:checked + .child .before-click {
+  display: none;
+}
+#primary:checked + .child .after-click {
+  display: block;
+}
+#primary:checked + .child:hover {
+  background-color: #d70e0e;
+}
+
+.primary {
+  z-index: 10;
+  width: 100px;
+  height: 100px;
+}
+
+.two,
+.three,
+.four,
+.five,
+.six {
+  transition: all 0.6s;
+  width: 70px;
+  height: 70px;
+}
+
+#primary:checked ~ .two {
+  left: -5%;
+}
+#primary:checked ~ .three {
+  left: -55%;
+}
+#primary:checked ~ .four {
+  top: -5%;
+}
+#primary:checked ~ .five {
+  left: 155%;
+}
+#primary:checked ~ .six {
+  left: 105%;
+}
+
+.after-click {
+  display: none;
+}
