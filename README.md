@@ -1,2 +1,2 @@
 # css-snippets
-CSS snippets of common reusable components required in websites.
+Custom CSS snippets of common reusable components required in websites.
